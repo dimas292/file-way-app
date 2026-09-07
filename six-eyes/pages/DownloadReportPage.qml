@@ -42,7 +42,6 @@ Page {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 112
-            radius: 10
             color: "#F8F9FC"
             border.color: "#E2E5ED"
 

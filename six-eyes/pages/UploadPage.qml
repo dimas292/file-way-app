@@ -58,18 +58,11 @@ Page {
                             Layout.fillWidth: true
                             spacing: 12
 
-                            // Image {
-                            //     Layout.preferredWidth: 28
-                            //     Layout.preferredHeight: 28
-                            //     source: "qrc:/assets/icons/rfid.png"
-                            //     fillMode: Image.PreserveAspectFit
-                            // }
-
                             Label {
                                 Layout.fillWidth: true
-                                text: root.deviceName.length > 0 ? root.deviceName : qsTr("No device")
+                                text: root.deviceName.length > 0 ? qsTr("Device: ") + root.deviceName : qsTr("No device")
                                 color: "#171A22"
-                                font.pixelSize: 17
+                                font.pixelSize: 16
                                 font.bold: true
                                 elide: Text.ElideRight
                             }
@@ -105,7 +98,8 @@ Page {
                                           ? root.lastUploadedFileName
                                           : qsTr("No file uploaded this session")
                                     color: root.lastUploadedFileName.length > 0 ? "#171A22" : "#9A9FAB"
-                                    font.pixelSize: 14
+                                    font.pixelSize: 12
+                                    font.underline: true
                                     font.bold: root.lastUploadedFileName.length > 0
                                     wrapMode: Text.WrapAnywhere
                                     maximumLineCount: 2
@@ -253,15 +247,15 @@ Page {
                         onClicked: fileDialog.open()
                     }
 
-                    Label {
-                        Layout.fillWidth: true
-                        visible: DeviceBackend.error.length > 0 || DeviceBackend.status.length > 0
-                        text: DeviceBackend.error.length > 0 ? DeviceBackend.error : DeviceBackend.status
-                        color: DeviceBackend.error.length > 0 ? "#A32D2D" : "#5A6070"
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        wrapMode: Text.WordWrap
-                    }
+                    // Label {
+                    //     Layout.fillWidth: true
+                    //     visible: DeviceBackend.error.length > 0 || DeviceBackend.status.length > 0
+                    //     text: DeviceBackend.error.length > 0 ? DeviceBackend.error : DeviceBackend.status
+                    //     color: DeviceBackend.error.length > 0 ? "#A32D2D" : "#5A6070"
+                    //     font.pixelSize: 12
+                    //     horizontalAlignment: Text.AlignHCenter
+                    //     wrapMode: Text.WordWrap
+                    // }
 
                     Item {
                         Layout.fillHeight: true
